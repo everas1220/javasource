@@ -3,7 +3,7 @@ package ch1;
 // byte : 8비트
 //숫자 표현 : 2의 8승 =256, 음수부터 표현 256/2 +> -128 ~ 127까지 표현 가능 
 
-public class VarintEx1{
+public class VarIntEx1{
     public static void main(String[] args) {
         // 변수
         // 기본타입이라고 부르는 형태가 있음 : 정수형,문자형,실수형,불린형
@@ -19,7 +19,7 @@ public class VarintEx1{
         // 변수명 : 단어2개가 조합이 되는 경우 뒷단어의 시작은 대문자로 한다 
         // max-speed : 데이터베이스 필드명
         // long : L,l븉인다
-        long ,maxSpeed = 100;
+        long, maxSpeed = 100;
         long money = 1000000000000L;
      //변수명 타입 = 값
 
