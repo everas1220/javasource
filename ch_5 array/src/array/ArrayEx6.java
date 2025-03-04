@@ -3,7 +3,7 @@ package array;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ArraayEx6 {
+public class ArrayEx6 {
   public static void main(String[] args) {
     // char 값 5개
 

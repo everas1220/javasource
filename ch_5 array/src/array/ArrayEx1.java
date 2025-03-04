@@ -4,7 +4,7 @@ package array;
 // 같은 타입의 여러 변수를 하나의 묶음으로 다루는 개념 
 // 배열의 크기는 변경 불가 
 
-public class ArraayEx1 {
+public class ArrayEx1 {
   public static void main(String[] args) {
     // 학생 100명의 점수를 입력
     // [int] 배열명 = new int[100]; 배열선언,생성

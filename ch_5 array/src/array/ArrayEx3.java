@@ -7,7 +7,7 @@ import java.util.Scanner;
 // 같은 타입의 여러 변수를 하나의 묶음으로 다루는 개념 
 // 배열의 크기는 변경 불가 
 
-public class ArraayEx3 {
+public class ArrayEx3 {
   public static void main(String[] args) {
 
     Scanner sc = new Scanner(System.in);
