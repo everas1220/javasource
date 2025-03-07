@@ -1,4 +1,4 @@
-package extend;
+package oop;
 
 public class TriangleEx {
     public static void main(String[] args) {

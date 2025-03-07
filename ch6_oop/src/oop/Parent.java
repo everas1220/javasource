@@ -1,4 +1,4 @@
-package extend;
+package oop;
 
 //상속(isa관계)
 //기존의 클래스를 재사용하여 새로운 클래스 작성

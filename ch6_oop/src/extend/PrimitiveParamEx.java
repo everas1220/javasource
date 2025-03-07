@@ -1,5 +1,7 @@
 package extend;
 
+import oop.Data;
+
 // staric 메서드 : class 메서드 
 // 클래스가 메모리에 올라갔을 때 (클래스 작성 완료시)/
 

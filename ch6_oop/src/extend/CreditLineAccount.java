@@ -4,9 +4,9 @@ public class CreditLineAccount {
 
     private int CreditLine;
 
-    public CreditLineAccount(String anoo, String owner, long balance, int creditLine){
-        super(ano,owner,balance);
-        this.creditLine = creditLine;
+    public CreditLineAccount(String anoo, String owner, long balance, int creditLine) {
+        super(ano, owner, balance);
+        this.CreditLine = creditLine;
     }
 
     // 오버라이딩
@@ -21,4 +21,8 @@ public class CreditLineAccount {
             super.setBalance(super.getbalance() - amount);
     }
 
+    public String getBalance() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getBalance'");
+    }
 }

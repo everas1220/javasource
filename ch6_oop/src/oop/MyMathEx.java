@@ -1,4 +1,4 @@
-package extend;
+package oop;
 
 public class MyMathEx {
     public static void main(String[] args) {

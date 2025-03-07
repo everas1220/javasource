@@ -1,4 +1,4 @@
-package extend;
+package oop;
 
 public class Triangle {
     // 속성 : 밑변(baseLine), 높이(height)

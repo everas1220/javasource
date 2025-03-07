@@ -1,4 +1,4 @@
-package extend;
+package oop;
 
 public class miniCalcEx {
     public static void main(String[] args) {

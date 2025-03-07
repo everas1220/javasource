@@ -2,6 +2,8 @@ package extend;
 
 import javax.swing.text.Position;
 
+import oop.Triangle;
+
 public class DrawShapeEx {
     public static void main(String[] args) {
 

@@ -1,4 +1,4 @@
-package extend;
+package oop;
 
 public class subString {
     // 조건

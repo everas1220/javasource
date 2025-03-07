@@ -1,5 +1,7 @@
 package extend;
 
+import oop.Shape;
+
 public class Circle extends Shape {
 
     Point point;

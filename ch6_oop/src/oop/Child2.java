@@ -1,4 +1,4 @@
-package extend;
+package oop;
 
 public class Child2 extends Parent {
     void play() {

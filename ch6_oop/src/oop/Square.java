@@ -1,4 +1,4 @@
-package extend;
+package oop;
 
 public class Square {
     // 정사각형

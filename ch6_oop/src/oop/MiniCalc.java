@@ -1,4 +1,4 @@
-package extend;
+package oop;
 
 //메서드 종류
 

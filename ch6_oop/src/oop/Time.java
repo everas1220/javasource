@@ -1,4 +1,4 @@
-package extend;
+package oop;
 
 public class Time {
     // 속성 : 시, 분, 초
