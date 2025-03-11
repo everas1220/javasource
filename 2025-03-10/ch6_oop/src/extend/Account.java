@@ -29,7 +29,7 @@ public class Account {
     }
 
     void withdraw(long amount) {
-        return balance
+        return balance;
     }
 
     public void setBalance(String balance) {
@@ -41,3 +41,4 @@ public class Account {
     public String toString(){
         return "Account[ ano=" + ano +",owner=" + owner +", "
     }
+}
