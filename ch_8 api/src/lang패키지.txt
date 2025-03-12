@@ -1,0 +1,8 @@
+java.lang 패키지 
+1.Object
+-모든클래스의 최고 조상
+https://docs.oracle.com/en/java/javase/23/docs/api/java.base/module-summary.html
+
+- equals() : 부모는 주소 값 비교인데 재정의를통해 값 비교 변경 가능
+- equals() : 멤버 변수 값이 동일하면 동일한 객체로 간주
+- toString() : 멤버 변수 값 출력 용도로 재정의 
