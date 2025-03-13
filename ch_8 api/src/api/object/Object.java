@@ -20,8 +20,8 @@ public class Object {
         System.out.println(value1.equals(value2) ? "value1 == value2" : "value1 != value2");
         System.out.println("Value toString()" + value1.toString());
 
-        Persen p1 = new Persen("hong123", "홍길동");
-        Persen p2 = new Persen("hong123", "박길동");
+        Person p1 = new Person("hong123", "홍길동");
+        Person p2 = new Person("hong123", "박길동");
 
         System.out.println(p1.equals(p2) ? "p1 == p2" : "p1 != p2");
         System.out.println("Person toString" + p1.toString());

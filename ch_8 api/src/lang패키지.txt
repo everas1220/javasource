@@ -4,13 +4,12 @@ java.lang 패키지
     https://docs.oracle.com/en/java/javase/23/docs/api/java.base/module-summary.html
     - equals() : 부모는 주소 값 비교인데 재정의를통해 값 비교 변경 가능
     - equals() : 멤버 변수 값이 동일하면 동일한 객체로 간주 
-- toString() : 멤버 변수 값 출력 용도로 재정의 
-
+    - toString() : 멤버 변수 값 출력 용도로 재정의 
 2. String
+
 - 문자열을 다루기 위한 클래스
     -String str = ""; (재사용 가능)
     -String str1 = new String("안녕하세요"); (새로운 인스턴스 값으로 매번 할당)
-
 
 - 변경 불가능한(immutable) 클래스
     (String, ...)
@@ -40,3 +39,20 @@ java.lang 패키지
        replaceAll("원본","변경") : 원본(정규식 사용 가능) 찾아서 변경할 문자열로 전체 변경
        replaceFirst("원본","변경") : 원본 찾아서 변경할 문자열로 처음만 변경
        
+3.StringBilder, StringBuffer
+ -a문자열을 다루기 위한 클래스
+ -변경가능한 클래스
+ -StringBuffer : 멀티클래스 지원
+ -StringBilder : 단일클래스 ,StringBuffer보다 빠름
+
+4.Math
+ - 기본적인 수학 계산에 유용한 메소드로 구성됨
+ - 모든 메소드가 static임, 상수로만 존재함
+ 
+5.래퍼(wrapper) 클래스
+ -기본형을 객체로 다루기 위한 클래스
+ - int ==> Integer
+ - long ==> long
+ - float ==> float
+ - char ==> Charater
+ - boolean ==> Boolean
