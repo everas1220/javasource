@@ -35,6 +35,15 @@ java.lang 패키지
     2-9) replace("원본","변경") : 원본 찾아서 변경할 문자열로 전체 변경
        replaceAll("원본","변경") : 원본(정규식 사용 가능) 찾아서 변경할 문자열로 전체 변경
        replaceFirst("원본","변경") : 원본 찾아서 변경할 문자열로 처음만 변경
+    2-10) substring() : 새로운 문자열 반환
+
+    2-11) split() : 지정한 문자열로 분리(배열로 변환)
+
+    2-12) toLowerCase() / toUpperCase() : 대소문자 변경
+
+    2-13) valueOf() : 다른타입=> 문자열로 변경
+
+    2-14) trim() : 공백제거
        
 3.StringBilder, StringBuffer
  -a문자열을 다루기 위한 클래스

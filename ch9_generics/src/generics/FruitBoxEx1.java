@@ -1,6 +1,10 @@
 package generics;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 class Fruit {
     @Override
@@ -24,6 +28,14 @@ class Grape extends Fruit {
     }
 }
 
+class Juicer {
+    static Juice makeJuice(Box3<Fruit> box){
+        String tmp = "";
+        for(Fruit f : )
+
+    }
+}
+
 class Box3<T> {
     ArrayList<T> list = new ArrayList<>();
 
@@ -33,6 +45,10 @@ class Box3<T> {
 
     T get(int i) {
         return list.get(i);
+    }
+
+    public ArrayList<T> getList() {
+        return list;
     }
 
     int size() {
@@ -53,6 +69,9 @@ class Toy {
 }
 
 public class FruitBoxEx1 {
+
+    // Comparator c;
+
     public static void main(String[] args) {
         Box3<Fruit> fruitBox = new Box3<>();
         Box3<Apple> appleBox = new Box3<>();
@@ -71,5 +90,11 @@ public class FruitBoxEx1 {
         toyBox.add(new Toy());
 
         grepeBox.add(new Grape());
+
+        // sort대상리스트, Comparator<? super Apple> c)
+        // <? super Apple> : Apple 클래스 + 부모(Fruit, Object)
+        List<Apple> list = new ArrayList<>();
+        Collections.sort(list, null);
+
     }
 }
