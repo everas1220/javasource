@@ -34,6 +34,8 @@ public class StreamEx4 {
 
         List<String> fruits = Arrays.asList("apple", "grape", "melon", "watermelon", "banana");
         // 대문자로 변경후 출력
+
+        // (향상된 for문)
         for (String f : fruits) {
             System.out.println(f.toUpperCase());
         }
@@ -72,6 +74,12 @@ public class StreamEx4 {
         System.out.println(extSet);
 
         // stream
+        stream = Stream.of(
+                new File("file1.txt"),
+                new File("file2.txt"),
+                new File("file3"),
+                new File("file4.bak"),
+                new File("file5.java"));
         stream.map(f -> f.getName()) // [file1.txt,file12.txt....]
                 .filter(f -> f.indexOf(".") > -1) // file1.txt ,file2.txt, file4.bak, file5.java
                 .map(f -> f.substring(f.lastIndexOf(".") + 1)) // txt, txt, bak , java
