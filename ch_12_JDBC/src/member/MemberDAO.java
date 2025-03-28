@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MemberDAO {
     private Connection con;
@@ -13,7 +15,6 @@ public class MemberDAO {
 
     // static : 인스턴스변수,인스턴스메소드 앞에 붙으면 공유
     // 로드 시점이 가장 처음에 로드됨
-    //
 
     static {
         // 드라이버 로드
@@ -61,6 +62,126 @@ public class MemberDAO {
     // insert,delete,update : int 리턴
     // select : ~~ DTO(where pk 지정) or List<~~DTO>
 
+    // SELECT * FROM MEMBER WHERE NAME like '&홍&';
+
+    public List<MemberDTO> getNameList(String name) {
+
+        List<MemberDTO> list = new ArrayList<>();
+
+        try {
+            con = getConnection();
+
+            String sql = " SELECT * FROM MEMBER WHERE NAME like ? ";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, "%" + name + "%");
+            rs = pstmt.executeQuery();
+
+            // rs => dto 옮기기
+            while (rs.next()) {
+                MemberDTO memberDTO = new MemberDTO();
+                memberDTO.setNo(rs.getInt("no"));
+                memberDTO.setID(rs.getString("id"));
+                memberDTO.setNAME(rs.getString("name"));
+                memberDTO.setADDR(rs.getString("addr"));
+                memberDTO.setEMAIL(rs.getString("email"));
+                memberDTO.setAGE(rs.getInt("age"));
+                list.add(memberDTO);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            close(con, pstmt, rs);
+        }
+        return list;
+    }
+
+    public List<MemberDTO> getList() {
+
+        List<MemberDTO> list = new ArrayList<>();
+
+        try {
+            con = getConnection();
+
+            String sql = "select * from member";
+            pstmt = con.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+
+            // rs => dto 옮기기
+            while (rs.next()) {
+                MemberDTO memberDTO = new MemberDTO();
+                memberDTO.setNo(rs.getInt("no"));
+                memberDTO.setID(rs.getString("id"));
+                memberDTO.setNAME(rs.getString("name"));
+                memberDTO.setADDR(rs.getString("addr"));
+                memberDTO.setEMAIL(rs.getString("email"));
+                memberDTO.setAGE(rs.getInt("age"));
+                list.add(memberDTO);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            close(con, pstmt, rs);
+        }
+        return list;
+    }
+
+    public MemberDTO getRow(String id) {
+
+        MemberDTO memberDTO = null;
+
+        try {
+            con = getConnection();
+
+            String sql = "select * from member where id = ? ";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, id);
+
+            rs = pstmt.executeQuery();
+
+            // rs => dto 옮기기
+            if (rs.next()) {
+
+                memberDTO = new MemberDTO();
+
+                // rs 꺼내기 get()
+                // String name = rs.getString("name");
+                // 담기 set~~
+                memberDTO.setNo(rs.getInt("no"));
+                memberDTO.setID(rs.getString("id"));
+                memberDTO.setNAME(rs.getString("name"));
+                memberDTO.setADDR(rs.getString("addr"));
+                memberDTO.setEMAIL(rs.getString("email"));
+                memberDTO.setAGE(rs.getInt("age"));
+                // memberDTO.setREMARK(rs.getString("remark"));
+
+                return memberDTO;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            close(con, pstmt, rs);
+        }
+        return memberDTO;
+    }
+
+    // delete : 전달인자 ~pk 사용함
+    public int delete(String id) {
+        int result = 0;
+        try {
+            con = getConnection();
+            String sql = "delete from member where id = ? ";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, id);
+            result = pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            close(con, pstmt);
+        }
+        return result;
+    }
+
     // insert, update : 전달인자 ~~~ DTO 설정
 
     public int update(MemberDTO memberDTO) {
@@ -73,7 +194,7 @@ public class MemberDAO {
         try {
             con = getConnection();
 
-            String sql = "update MEMBER_TABLE ";
+            String sql = "update  MEMBER";
 
             if (memberDTO.getADDR() != null) {
                 sql += "set ADDR = ? ";
@@ -105,8 +226,8 @@ public class MemberDAO {
         try {
             con = getConnection();
 
-            String sql = "insert into MEMBER_TABLE ";
-            sql += "values(?,?,?,?,?)";
+            String sql = "insert into MEMBER";
+            sql += "values(member_seq_.nextbal,?,?,?,?,?)";
 
             pstmt = con.prepareStatement(sql);
 

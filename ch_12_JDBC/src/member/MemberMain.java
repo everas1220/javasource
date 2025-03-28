@@ -1,5 +1,6 @@
 package member;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class MemberMain {
@@ -25,7 +26,7 @@ public class MemberMain {
 
             switch (menu) {
                 case 1:
-                    MemberDTO dto = util.memberInsertInto(sc);
+                    MemberDTO dto = util.memberInsertInfo(sc);
                     int result = mDao.insert(dto);
                     util.printSuccessMessage(result);
                     break;
@@ -38,13 +39,23 @@ public class MemberMain {
                     }
                     break;
                 case 3:
-
+                    String id = util.memberDeleteInfo(sc);
+                    result = mDao.delete(id);
+                    util.printDeleteSuccessMessage(result);
                     break;
                 case 4:
-
+                    id = util.memberGetInfo(sc);
+                    MemberDTO row = mDao.getRow(id);
+                    if (row != null) {
+                        util.memberPrint(row);
+                    }
+                    // 출력메소드
+                    util.memberPrint(row);
                     break;
                 case 5:
-
+                    // mDao.getList() => 받은 결과 화면 출력
+                    List<MemberDTO> list = mDao.getList();
+                    util.memberAllPrint(list);
                     break;
                 case 6:
                     run = false;
