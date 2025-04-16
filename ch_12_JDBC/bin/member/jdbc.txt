@@ -1,0 +1,9 @@
+1. JDBC 드라이버 로드 
+2. Connection 객체 생성
+3. Statement 객체 생성
+4. Query 수행
+5. ResultSet 객체로부터 데이터 추출
+6. ResultSet Close
+7. Statement Close
+8. Connection Close
+

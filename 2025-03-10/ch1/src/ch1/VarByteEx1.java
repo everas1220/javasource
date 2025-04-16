@@ -28,7 +28,7 @@ public class VarByteEx1 {
         // +: 연결 사이에(문자){","과 같은}
     
         System.out.println("나이 : "+age + ", 최고속도 : " + maxSpeed);
-        System.out.printf(format:"나이 : 
+        System.out.printf(format:나이 : 
         System.out.println(age + maxSpeed);
     }
 }
